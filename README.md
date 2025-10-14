@@ -24,9 +24,9 @@ Install [direnv](https://direnv.net/) and make sure it is hooked into your shell
 
 1.  Make sure you have the pre-requisites installed.
 2.  In the root of your Go project create an `.envrc` pointing to this flake:
-    
+
     ```bash
-    echo "use flake github:guoguojin/convexity-dev-env" > .envrc
+    echo "use flake github:guoguojin/dora-dev-env" > .envrc
     ```
 
 3.  If you have `direnv` correctly hooked into your shell you should see a warning:
@@ -48,11 +48,11 @@ Install [direnv](https://direnv.net/) and make sure it is hooked into your shell
     direnv: export <list of your environment variables available in your development shell>
     ```
 
-Your development environment shell is ready to use. 
+Your development environment shell is ready to use.
 
-> Note: 
+> Note:
   If you are using GoLand or IntelliJ IDEA with the Go plugin, you will need to change the GOROOT and GOPATH
-  for the project to the paths specified by the shell. 
+  for the project to the paths specified by the shell.
   If you are using VS Code, starting `code` from the terminal while you're inside the development shell it should
   pick up the GOROOT and GOPATH from the environment variables. Otherwise you will need to set them accordingly in
   the settings.json

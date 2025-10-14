@@ -56,6 +56,8 @@
             gdk
             buf
             firebase-tools
+            flyctl
+            jq
           ];
 
           # CGO runtime header file has a warning about compiling with optimizations which will
@@ -103,4 +105,3 @@
       }
     );
 }
-

@@ -3,5 +3,6 @@
 !README.md
 !commitlint.config.js
 !flake.nix
+!flake.lock
 
 *

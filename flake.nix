@@ -10,7 +10,7 @@
   outputs = { self, nixpkgs, flake-utils }:
     flake-utils.lib.eachDefaultSystem (system:
       let
-        goVersion = 25;
+        goVersion = 26;
 
         pkgs = import nixpkgs { inherit system; };
         gdk = pkgs.google-cloud-sdk.withExtraComponents
@@ -53,11 +53,12 @@
             gotests
             gomodifytags
             impl
-            gdk
+            # gdk
             buf
-            firebase-tools
-            flyctl
+            # firebase-tools
+            # flyctl
             jq
+            python314
           ];
 
           # CGO runtime header file has a warning about compiling with optimizations which will

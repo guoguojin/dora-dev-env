@@ -13,26 +13,6 @@
         goVersion = 26;
 
         pkgs = import nixpkgs { inherit system; };
-        gdk = pkgs.google-cloud-sdk.withExtraComponents
-          (with pkgs.google-cloud-sdk.components; [
-            # components you need can be found here: https://github.com/NixOS/nixpkgs/blob/nixos-unstable/pkgs/tools/admin/google-cloud-sdk/components.json
-            gke-gcloud-auth-plugin
-            cloud-spanner-emulator
-            cloud-firestore-emulator
-            docker-credential-gcr
-            spanner-migration-tool
-            gsutil
-            gcloud-crc32c
-            gcloud-deps
-            gcloud-man-pages
-            kpt
-            kubectl
-            kustomize
-            log-streaming
-            minikube
-            skaffold
-            tests
-          ]);
       in {
         overlays.default = final: prev: {
           go = final."go_1_${toString goVersion}";
@@ -53,12 +33,10 @@
             gotests
             gomodifytags
             impl
-            # gdk
             buf
-            # firebase-tools
-            # flyctl
             jq
             python314
+            awscli2
           ];
 
           # CGO runtime header file has a warning about compiling with optimizations which will
